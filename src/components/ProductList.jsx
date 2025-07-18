@@ -1,6 +1,6 @@
-export default function ProductList({ onAddCart }) {
+export default function ProductList({ onAddToCart }) {
 
-    const products = [
+    const productObjects = [
           { id: 1, name: "T-shirt" },
           { id: 2, name: "Jeans" },
           { id: 3, name: "Sneakers" },
@@ -11,10 +11,10 @@ export default function ProductList({ onAddCart }) {
     <>
        <h1>Products</h1>
        <ul>
-        {products.map((item) => (
+        {productObjects.map((item) => (
           <li key={item.id}>
             {item.name}{" "}
-            <button onClick={onAddCart} >Add to Cart</button>
+            <button onClick={() => onAddToCart(item)} >Add to Cart</button>
           </li>
         ))}
       </ul>

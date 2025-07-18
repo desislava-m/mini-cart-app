@@ -4,17 +4,17 @@ import Cart from "../components/Cart"
 
 export default function CartPage() {
 
-const [ productCount, setProductCount ] = useState(0)
+const [ selectedProducts, setSelectedProducts ] = useState([])
 
-function handleAddToCart() {
-    setProductCount(prev => prev + 1)
+function handleAddToCart(item) {
+    setSelectedProducts([...selectedProducts, item])
 }
 
     return (
         <>
-            <h1>Shopping page</h1>
-            <Cart count={productCount}/>
-            <ProductList onAddCart={handleAddToCart} />
+            <h1>Shopping cart</h1>
+            <Cart selectedProducts={selectedProducts}/>
+            <ProductList onAddToCart={handleAddToCart} />
         </>
     )
 }
