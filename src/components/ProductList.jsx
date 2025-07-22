@@ -11,10 +11,10 @@ export default function ProductList({ onAddToCart }) {
     <>
        <h1>Products</h1>
        <ul>
-        {productObjects.map((item) => (
-          <li key={item.id}>
-            {item.name}{" "}
-            <button onClick={() => onAddToCart(item)} >Add to Cart</button>
+        {productObjects.map((product) => (
+          <li key={product.id}>
+            {product.name}{" "}
+            <button onClick={() => onAddToCart(product)} >Add to Cart</button>
           </li>
         ))}
       </ul>
