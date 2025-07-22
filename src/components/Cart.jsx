@@ -9,7 +9,7 @@ export default function Cart({selectedProducts, onRemove}) {
             <ul>
                 {selectedProducts.map((item) => 
                 <li key={item.id}>{item.name} (x{item.quantity})
-                <button onClick={() => onRemove(item.id)}>Remove</button>
+                <button onClick={() => onRemove(item)}>Remove</button>
                 </li>)}
             </ul>
         </>

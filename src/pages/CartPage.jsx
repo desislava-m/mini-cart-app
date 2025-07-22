@@ -20,8 +20,15 @@ function handleAddToCart(item) {
 }
 
 
-function handleRemoveItem(idToRemove) {
-    setSelectedProducts(prev => prev.filter(item => item.id !== idToRemove))
+function handleRemoveItem(product) {
+    setSelectedProducts(prev => {
+        const itemToRemove = prev.find(p => p.id === product.id);
+        if(itemToRemove && itemToRemove.quantity > 1) {
+            return prev.map(p => p.id === product.id ? {...p, quantity: p.quantity - 1} : p)
+        } else {
+            return prev.filter((item) => item.id !== product.id)
+        }
+    })
 }
 
     return (
