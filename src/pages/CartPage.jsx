@@ -31,10 +31,15 @@ function handleRemoveItem(product) {
     })
 }
 
+
+function handleClear() {
+    setSelectedProducts([])
+}
+
     return (
         <>
             <h1>Shopping cart</h1>
-            <Cart selectedProducts={selectedProducts} onRemove = {handleRemoveItem}/>
+            <Cart selectedProducts={selectedProducts} onRemove = {handleRemoveItem} onClear={handleClear}/>
             <ProductList onAddToCart={handleAddToCart} />
         </>
     )

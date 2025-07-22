@@ -1,4 +1,4 @@
-export default function Cart({selectedProducts, onRemove}) {
+export default function Cart({selectedProducts, onRemove, onClear}) {
 
     let selectedItemsCount = selectedProducts.length;
 
@@ -12,6 +12,7 @@ export default function Cart({selectedProducts, onRemove}) {
                 <button onClick={() => onRemove(item)}>Remove</button>
                 </li>)}
             </ul>
+            <button onClick={onClear}  disabled={selectedProducts.length === 0}>Clear</button>
         </>
     )
 }
